@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "VIT Academic Dashboard Sync",
+  "version": "1.3.0",
+  "description": "One-click sync of your VTOP grade history, curriculum and timetables into your VIT Academic Dashboard.",
+  "permissions": [
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://vtop.vit.ac.in/*",
+    "https://vtopcc.vit.ac.in/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://localhost:8787/*"
+      ],
+      "js": [
+        "bridge.js"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}

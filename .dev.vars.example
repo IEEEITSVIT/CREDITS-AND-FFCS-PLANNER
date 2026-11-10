@@ -1,0 +1,8 @@
+# Copy to .dev.vars for local testing (never commit .dev.vars)
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=you@gmail.com
+SMTP_PASS=your-app-password
+MAIL_FROM=you@gmail.com
+# When true and SMTP is not configured, reset links are printed to the dev server log
+DEV_LOG_RESET_LINKS=true

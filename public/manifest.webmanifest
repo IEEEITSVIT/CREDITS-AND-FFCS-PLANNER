@@ -1,0 +1,10 @@
+{
+  "name": "VIT Academic Dashboard",
+  "short_name": "VIT Academics",
+  "description": "Grades, credits, timetable, CGPA planner and FFCS timetable builder from VTOP.",
+  "start_url": "/#/overview",
+  "display": "standalone",
+  "background_color": "#f6f7fb",
+  "theme_color": "#3b5bdb",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

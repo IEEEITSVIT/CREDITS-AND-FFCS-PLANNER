@@ -1,0 +1,27 @@
+# VIT Academic Dashboard — one Worker serves the website (./public) and the API (/api/*).
+# Uses its own D1 database on the same Cloudflare account as ieee-its.
+name = "vit-academic-dashboard"
+main = "src/worker.js"
+compatibility_date = "2025-09-01"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/api/*"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "vit-academic-dashboard"
+database_id = "4fbc15dc-3e20-455c-91c1-597701300543"
+
+# Password-reset email (SMTP). Set as secrets, same names as the ieee-its site:
+#   npx wrangler secret put SMTP_HOST    (e.g. smtp.gmail.com)
+#   npx wrangler secret put SMTP_PORT    (587 = STARTTLS, 465 = SSL)
+#   npx wrangler secret put SMTP_USER
+#   npx wrangler secret put SMTP_PASS    (Gmail: an App Password)
+#   npx wrangler secret put MAIL_FROM    (optional, defaults to SMTP_USER)
+# APP_URL is the public site address used in reset links.
+[vars]
+APP_URL = ""
